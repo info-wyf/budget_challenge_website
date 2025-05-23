@@ -1,0 +1,92 @@
+<!-- templates/calculator.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/calculator">Budget Calculator</a></li>
+                <li><a href="/grocery">Grocery Challenge</a></li>
+                <li><a href="/tracker">Progress Tracker</a></li>
+                <li><a href="/resources">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Budget Calculator</h1>
+
+        <!-- Week 1-2: Calculate Net Income -->
+        <section class="calculator">
+            <h2>Week 1-2: Calculate Your Net Income</h2>
+            <label for="salary">Annual Salary ($):</label>
+            <input type="number" id="salary" step="0.01">
+            <label for="taxRate">Tax Rate (%):</label>
+            <input type="number" id="taxRate" step="0.01" value="20">
+            <button onclick="calculateNetIncome()">Calculate Net Income</button>
+            <p id="netIncomeResult">Your monthly net income will appear here.</p>
+        </section>
+
+        <!-- Week 3-4: Allocate Budget -->
+        <section class="calculator">
+            <h2>Week 3-4: Create Your Budget</h2>
+            <label for="income">Monthly Net Income ($):</label>
+            <input type="number" id="income" step="0.01">
+            <div id="budgetCategories">
+                <div class="category">
+                    <label>Category 1 (e.g., Housing):</label>
+                    <input type="text" placeholder="Category Name" class="category-name">
+                    <input type="number" placeholder="Percentage" class="category-percentage" step="0.01">
+                </div>
+                <div class="category">
+                    <label>Category 2 (e.g., Transport):</label>
+                    <input type="text" placeholder="Category Name" class="category-name">
+                    <input type="number" placeholder="Percentage" class="category-percentage" step="0.01">
+                </div>
+                <div class="category">
+                    <label>Category 3 (e.g., Savings):</label>
+                    <input type="text" placeholder="Category Name" class="category-name">
+                    <input type="number" placeholder="Percentage" class="category-percentage" step="0.01">
+                </div>
+            </div>
+            <button onclick="addCategory()">Add Category</button>
+            <button onclick="allocateBudget()">Allocate Budget</button>
+            <div id="budgetResult"></div>
+        </section>
+
+        <!-- Week 7-8: Adjust Budget -->
+        <section class="calculator">
+            <h2>Week 7-8: Adjust for Unexpected Expenses</h2>
+            <label for="currentIncome">Current Monthly Income ($):</label>
+            <input type="number" id="currentIncome" step="0.01">
+            <label for="currentExpenses">Current Total Expenses ($):</label>
+            <input type="number" id="currentExpenses" step="0.01">
+            <label for="adjustment">Adjustment Amount ($):</label>
+            <input type="number" id="adjustment" step="0.01">
+            <label><input type="checkbox" id="isIncomeChange"> Income Change (uncheck for Expense)</label>
+            <button onclick="adjustBudget()">Adjust Budget</button>
+            <p id="adjustResult">Adjusted balance will appear here.</p>
+        </section>
+
+        <!-- Week 9-10: Savings Calculator -->
+        <section class="calculator">
+            <h2>Week 9-10: Plan Your Savings</h2>
+            <label for="principal">Initial Savings ($):</label>
+            <input type="number" id="principal" step="0.01">
+            <label for="rate">Annual Interest Rate (%):</label>
+            <input type="number" id="rate" step="0.01" value="5">
+            <label for="time">Time (Years):</label>
+            <input type="number" id="time" step="0.01" value="5">
+            <button onclick="calculateSavings()">Calculate Savings</button>
+            <p id="savingsResult">Your savings projection will appear here.</p>
+        </section>
+    </main>
+</body>
+</html>

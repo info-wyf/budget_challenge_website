@@ -1,0 +1,36 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real World Budget Challenge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/calculator">Budget Calculator</a></li>
+                <li><a href="/grocery">Grocery Challenge</a></li>
+                <li><a href="/tracker">Progress Tracker</a></li>
+                <li><a href="/resources">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Welcome to the Real World Budget Challenge!</h1>
+        <p>This 10-week project helps you learn budgeting by managing a virtual household. You'll calculate income, create budgets, shop for groceries, handle unexpected expenses, and plan for the future—all while using math skills!</p>
+        <img src="https://media.istockphoto.com/id/495853751/photo/budget-concept.jpg?s=612x612&w=0&k=20&c=KK4PMk7UzB6Wg027uO9WgzY2muX32R3A8aYvu-bfx-4=" alt="Budgeting Image" height="50">
+        <h2>Project Overview</h2>
+        <ul>
+            <li>Weeks 1-2: Choose a career and calculate your income after taxes.</li>
+            <li>Weeks 3-4: Create a monthly budget for housing, transport, and more.</li>
+            <li>Weeks 5-6: Plan a grocery list within a budget during a store visit.</li>
+            <li>Weeks 7-8: Adjust your budget for unexpected expenses.</li>
+            <li>Weeks 9-10: Plan savings for a big purchase using compound interest.</li>
+        </ul>
+    </main>
+</body>
+</html>

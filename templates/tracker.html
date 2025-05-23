@@ -1,0 +1,59 @@
+<!-- templates/tracker.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/calculator">Budget Calculator</a></li>
+                <li><a href="/grocery">Grocery Challenge</a></li>
+                <li><a href="/tracker">Progress Tracker</a></li>
+                <li><a href="/resources">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Progress Tracker</h1>
+        <p>Track your weekly tasks for the Budget Challenge.</p>
+        <table>
+            <tr>
+                <th>Week</th>
+                <th>Task</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Weeks 1-2</td>
+                <td>Calculate Income</td>
+                <td>Not Started</td>
+            </tr>
+            <tr>
+                <td>Weeks 3-4</td>
+                <td>Create Budget</td>
+                <td>Not Started</td>
+            </tr>
+            <tr>
+                <td>Weeks 5-6</td>
+                <td>Grocery Challenge</td>
+                <td>Not Started</td>
+            </tr>
+            <tr>
+                <td>Weeks 7-8</td>
+                <td>Unexpected Expenses</td>
+                <td>Not Started</td>
+            </tr>
+            <tr>
+                <td>Weeks 9-10</td>
+                <td>Long-term Planning</td>
+                <td>Not Started</td>
+            </tr>
+        </table>
+    </main>
+</body>
+</html>

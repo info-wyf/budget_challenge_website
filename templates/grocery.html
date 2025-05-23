@@ -1,0 +1,44 @@
+
+<!-- templates/grocery.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Challenge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/calculator">Budget Calculator</a></li>
+                <li><a href="/grocery">Grocery Challenge</a></li>
+                <li><a href="/tracker">Progress Tracker</a></li>
+                <li><a href="/resources">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Week 5-6: Grocery Challenge</h1>
+        <p>Plan your weekly grocery list within a budget. Add items, compare prices, and calculate the total cost.</p>
+        <section class="calculator">
+            <label for="groceryBudget">Your Grocery Budget ($):</label>
+            <input type="number" id="groceryBudget" step="0.01" value="100">
+            <div id="groceryItems">
+                <div class="item">
+                    <label>Item 1:</label>
+                    <input type="text" placeholder="Item Name" class="item-name">
+                    <input type="number" placeholder="Price ($)" class="item-price" step="0.01">
+                    <input type="number" placeholder="Quantity" class="item-quantity" value="1">
+                </div>
+            </div>
+            <button onclick="addItem()">Add Item</button>
+            <button onclick="calculateGrocery()">Calculate Total</button>
+            <div id="groceryResult"></div>
+        </section>
+    </main>
+</body>
+</html>
