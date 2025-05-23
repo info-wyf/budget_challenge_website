@@ -1,5 +1,3 @@
-
-<!-- static/js/script.js -->
 let categoryCount = 3;
 let itemCount = 1;
 
@@ -79,6 +77,8 @@ function allocateBudget() {
             }
             result += `<p>Remaining: $${data.remaining.toFixed(2)}</p>`;
             document.getElementById('budgetResult').innerHTML = result;
+            document.getElementById('budgetChart').src = 'data:image/png;base64,' + data.chart;
+            document.getElementById('budgetChart').style.display = 'block';
         }
     })
     .catch(error => {

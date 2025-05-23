@@ -1,12 +1,11 @@
-<!-- templates/calculator.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget Calculator</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="/static/js/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -23,21 +22,19 @@
     <main>
         <h1>Budget Calculator</h1>
 
-        <!-- Week 1-2: Calculate Net Income -->
-        <section class="calculator">
+        <div class="calculator">
             <h2>Week 1-2: Calculate Your Net Income</h2>
-            <label for="salary">Annual Salary ($):</label>
+            <label>Annual Salary ($):</label>
             <input type="number" id="salary" step="0.01">
-            <label for="taxRate">Tax Rate (%):</label>
-            <input type="number" id="taxRate" step="0.01" value="20">
+            <label>Tax Rate (%):</label>
+            <input type="number" id="taxRate" step="0.01">
             <button onclick="calculateNetIncome()">Calculate Net Income</button>
             <p id="netIncomeResult">Your monthly net income will appear here.</p>
-        </section>
+        </div>
 
-        <!-- Week 3-4: Allocate Budget -->
-        <section class="calculator">
+        <div class="calculator">
             <h2>Week 3-4: Create Your Budget</h2>
-            <label for="income">Monthly Net Income ($):</label>
+            <label>Monthly Net Income ($):</label>
             <input type="number" id="income" step="0.01">
             <div id="budgetCategories">
                 <div class="category">
@@ -59,34 +56,33 @@
             <button onclick="addCategory()">Add Category</button>
             <button onclick="allocateBudget()">Allocate Budget</button>
             <div id="budgetResult"></div>
-        </section>
+            <img id="budgetChart" src="" style="display: none;">
+        </div>
 
-        <!-- Week 7-8: Adjust Budget -->
-        <section class="calculator">
+        <div class="calculator">
             <h2>Week 7-8: Adjust for Unexpected Expenses</h2>
-            <label for="currentIncome">Current Monthly Income ($):</label>
+            <label>Current Monthly Income ($):</label>
             <input type="number" id="currentIncome" step="0.01">
-            <label for="currentExpenses">Current Total Expenses ($):</label>
+            <label>Current Total Expenses ($):</label>
             <input type="number" id="currentExpenses" step="0.01">
-            <label for="adjustment">Adjustment Amount ($):</label>
+            <label>Adjustment Amount ($):</label>
             <input type="number" id="adjustment" step="0.01">
-            <label><input type="checkbox" id="isIncomeChange"> Income Change (uncheck for Expense)</label>
+            <label><input type="checkbox" id="isIncomeChange" checked> Income Change (uncheck for Expense)</label>
             <button onclick="adjustBudget()">Adjust Budget</button>
             <p id="adjustResult">Adjusted balance will appear here.</p>
-        </section>
+        </div>
 
-        <!-- Week 9-10: Savings Calculator -->
-        <section class="calculator">
+        <div class="calculator">
             <h2>Week 9-10: Plan Your Savings</h2>
-            <label for="principal">Initial Savings ($):</label>
+            <label>Initial Savings ($):</label>
             <input type="number" id="principal" step="0.01">
-            <label for="rate">Annual Interest Rate (%):</label>
-            <input type="number" id="rate" step="0.01" value="5">
-            <label for="time">Time (Years):</label>
-            <input type="number" id="time" step="0.01" value="5">
+            <label>Annual Interest Rate (%):</label>
+            <input type="number" id="rate" step="0.01">
+            <label>Time (Years):</label>
+            <input type="number" id="time" step="0.01">
             <button onclick="calculateSavings()">Calculate Savings</button>
             <p id="savingsResult">Your savings projection will appear here.</p>
-        </section>
+        </div>
     </main>
 </body>
 </html>
